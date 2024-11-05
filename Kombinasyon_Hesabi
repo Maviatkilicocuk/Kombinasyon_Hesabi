@@ -1,0 +1,39 @@
+package Giris;
+import java.util.Scanner;
+public class Kombinasyon_Hesabbi {
+    public static void main(String[] args) {
+        int number1,total1=1,number2,total2=1,total3=1,x=1,y=1,z=1,result;
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("C(n,r) = n! / (r! * (n-r)!) kombinasyon formülüdür.");
+        System.out.print("n sayısını giriniz : ");
+        number1 = input.nextInt();
+
+        System.out.print("r sayısını giriniz : ");
+        number2 = input.nextInt();
+        if (number1 > number2){
+        do {
+            total1 = total1 * x;
+            x = x+1;
+
+        }while (number1>=x);
+
+        do {
+            total2 = total2 * y;
+            y = y+1;
+
+        }while (number2>=y);
+
+        do {
+            total3 = total3 * z;
+            z = z+1;
+
+        }while ((number1-number2)>=z);
+
+        result = total1 /(total2*total3);
+        System.out.print("Kombinasyon sonucu = " + result);
+    }else
+        System.out.print("Yanlış bir girdi yaptınız!");
+    }
+}
